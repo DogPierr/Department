@@ -8,7 +8,7 @@
 template<typename T>
 class Stack {
 public:
-    Stack() = default;
+    Stack();
     Stack(const Stack &other);
     Stack(Stack &&other) noexcept;
     Stack &operator=(const Stack &other);
@@ -38,8 +38,12 @@ private:
 };
 
 template<typename T>
+Stack<T>::Stack(): top_(nullptr), size_(0) {}
+
+template<typename T>
 Stack<T>::Stack(const Stack &other) {
     if (other.top_ == nullptr) {
+        size_ = 0;
         top_ = nullptr;
         return;
     }
@@ -80,6 +84,11 @@ Stack<T> &Stack<T>::operator=(Stack &&other) noexcept {
 
 template<typename T>
 void Stack<T>::Push(const T &value) {
+    if (top_ == nullptr) {
+        top_ = new Node(value);
+        ++size_;
+        return;
+    }
     Node* new_node = new Node(value);
     new_node->next = top_;
     top_ = new_node;

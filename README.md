@@ -1,1 +1,1 @@
-# mipt2024s-3-polevoi-d
+# mipt2024s-3-dankov-n

@@ -5,3 +5,9 @@ target_link_libraries(stackarr_doctest doctest::doctest stackarr)
 
 add_executable(stacklst_doctest stacklst_doctest.cpp)
 target_link_libraries(stacklst_doctest doctest::doctest stacklst)
+
+add_executable(CSingleLinkedList_doctest CSingleLinkedList_doctest.cpp)
+target_link_libraries(CSingleLinkedList_doctest doctest::doctest CSingleLinkedList)
+
+add_executable(CDualLinkedList_doctest CDualLinkedList_doctest.cpp)
+target_link_libraries(CDualLinkedList_doctest doctest::doctest CDualLinkedList)

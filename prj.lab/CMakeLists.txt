@@ -1,2 +1,4 @@
 add_subdirectory(stackarr)
 add_subdirectory(stacklst)
+add_subdirectory(CSingleLinkedList)
+add_subdirectory(CDualLinkedList)

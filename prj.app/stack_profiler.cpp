@@ -51,6 +51,7 @@ void PopAndPush(int N) {
         start = std::chrono::high_resolution_clock::now();
         s_lst.Push(i);
         stop = std::chrono::high_resolution_clock::now();
+
         duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
         file_lst << i + 1 << ',' << duration.count() << '\n';
     }

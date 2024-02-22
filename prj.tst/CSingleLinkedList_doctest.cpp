@@ -1,4 +1,4 @@
-#include "CSingleLinkedList/CSingleLinkedList.h"
+#include "CSingleLinkedList/list.h"
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 

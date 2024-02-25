@@ -11,3 +11,6 @@ target_link_libraries(CSingleLinkedList_doctest doctest::doctest CSingleLinkedLi
 
 add_executable(CDualLinkedList_doctest CDualLinkedList_doctest.cpp)
 target_link_libraries(CDualLinkedList_doctest doctest::doctest CDualLinkedList)
+
+add_executable(hash_doctest hash_doctest.cpp)
+target_link_libraries(hash_doctest doctest::doctest hashmap)

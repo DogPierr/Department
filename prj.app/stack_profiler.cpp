@@ -17,7 +17,7 @@ void CreateN(int N) {
 
     auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
 
-    std::ofstream file_arr("../prj.data/stack_arr_time.txt", std::ios_base::app);
+    std::ofstream file_arr("../prj.data/stack/stack_arr_time.txt", std::ios_base::app);
     file_arr << N << ',' << duration.count() << '\n';
 
     Stack<int> s_lst;
@@ -30,7 +30,7 @@ void CreateN(int N) {
 
     duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start);
 
-    std::ofstream file_lst("../prj.data/stack_lst_time.txt", std::ios_base::app);
+    std::ofstream file_lst("../prj.data/stack/stack_lst_time.txt", std::ios_base::app);
     file_lst << N << ',' << duration.count() << '\n';
 }
 
@@ -38,8 +38,8 @@ void PopAndPush(int N) {
     StackArray<int> s_arr;
     Stack<int> s_lst;
 
-    std::ofstream file_arr("../prj.data/stack_arr_push.txt", std::ios_base::app);
-    std::ofstream file_lst("../prj.data/stack_lst_push.txt", std::ios_base::app);
+    std::ofstream file_arr("../prj.data/stack/stack_arr_push.txt", std::ios_base::app);
+    std::ofstream file_lst("../prj.data/stack/stack_lst_push.txt", std::ios_base::app);
     for (int i = 0; i < N; ++i) {
         auto start = std::chrono::high_resolution_clock::now();
         s_arr.Push(i);
@@ -58,9 +58,9 @@ void PopAndPush(int N) {
 }
 
 int main() {
-    std::ofstream file_arr("../prj.data/stack_arr_time.txt");
+    std::ofstream file_arr("../prj.data/stack/stack_arr_time.txt");
     file_arr << "n,time\n";
-    std::ofstream file_lst("../prj.data/stack_lst_time.txt");
+    std::ofstream file_lst("../prj.data/stack/stack_lst_time.txt");
     file_lst << "n,time\n";
     for (int i = 0; i < 1e5; ++i) {
         CreateN(i);

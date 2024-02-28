@@ -1,5 +1,5 @@
-#ifndef MIPT2024S_3_LIST_H
-#define MIPT2024S_3_LIST_H
+#ifndef MIPT2024S_3_CDUALLINKEDLIST_H
+#define MIPT2024S_3_CDUALLINKEDLIST_H
 
 #include <stdexcept>
 
@@ -394,4 +394,4 @@ class CDualLinkedList {
 };
 };  // namespace lab618
 
-#endif  // MIPT2024S_3_LIST_H
+#endif  // MIPT2024S_3_CDUALLINKEDLIST_H

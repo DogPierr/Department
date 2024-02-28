@@ -1,4 +1,4 @@
 #include <cassert>
 #include <iostream>
 
-#include "CDualLinkedList/list.h"
+#include "CDualLinkedList/CDualLinkedList.h"

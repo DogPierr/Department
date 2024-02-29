@@ -76,13 +76,12 @@ namespace lab618
         /**
         Исключение, которое применяется при нехватке памяти на работу алгоритма
         */
-        class CMemoryException
-        {
-        public:
-            CMemoryException()
-            {
+     class CMemoryException : public std::exception {
+           public:
+            char * what ()  {
+              return "Memory limit";
             }
-        };
+     };
 
     public:
         /**
@@ -92,7 +91,11 @@ namespace lab618
         CHash(int hashTableSize)
         {
             m_tableSize = hashTableSize;
-            m_pTable = new leaf*[m_tableSize];
+            try {
+              m_pTable = new leaf*[m_tableSize];
+            } catch (...) {
+              throw CMemoryException();
+            }
             for (int i = 0; i < m_tableSize; ++i) {
                 m_pTable[i] = nullptr;
             }
@@ -116,10 +119,15 @@ namespace lab618
             if (currentLeaf != nullptr) {
                 return false;
             }
-            leaf* newLeaf = new leaf;
-            newLeaf->pData = pElement;
-            newLeaf->pnext = m_pTable[idx];
-            m_pTable[idx] = newLeaf;
+            try {
+              leaf* newLeaf = new leaf;
+              newLeaf->pData = pElement;
+              newLeaf->pnext = m_pTable[idx];
+              m_pTable[idx] = newLeaf;
+            } catch (...) {
+              throw CMemoryException();
+            }
+
             return true;
         }
         /**
@@ -134,7 +142,15 @@ namespace lab618
                 currentLeaf->pData = pElement;
                 return true;
             }
-            return add(pElement);
+            try{
+              leaf* newLeaf = new leaf;
+              newLeaf->pData = pElement;
+              newLeaf->pnext = m_pTable[idx];
+              m_pTable[idx] = newLeaf;
+            } catch (...) {
+              throw CMemoryException();
+            }
+            return false;
         }
 
         /**

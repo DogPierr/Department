@@ -149,6 +149,11 @@ void TestManipulationSpeed() {
   }
 }
 
+void TestBuildFile() {
+  std::fstream file(JSON_FILE_NAME);
+
+}
+
 int main() {
   TestBuildSpeed();
   TestManipulationSpeed();

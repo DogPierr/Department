@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-#define JSON_FILE_NAME "../prj.data/json_parser/data-small.json"
+#define JSON_FILE_NAME "../prj.data/json_parser/data-medium.json"
 #define SIZE_OF_FIELD 108
 #define IS_DEPLOY false
 

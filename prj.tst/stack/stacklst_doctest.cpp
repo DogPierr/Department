@@ -1,14 +1,15 @@
-#include <stackarr/stackarr.hpp>
+// 2024 by Polevoi Dmitry under Unlicense
+
+#include "stacklst/stacklst.hpp"
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-
 #include <doctest/doctest.h>
 
-TEST_CASE("[stackarr] -- copy constructors") {
-    StackArray<float> st;
+TEST_CASE("[stacklst] -- copy constructors") {
+    Stack<float> st;
     int n = 100;
     for (int i = 0; i < n; ++i) st.Push(i);
-    StackArr copy(st);
+    Stack copy(st);
     st = copy;
     for (int i = 0; i < n; ++i) {
         CHECK((n - i - 1) == st.Top());
@@ -16,9 +17,9 @@ TEST_CASE("[stackarr] -- copy constructors") {
     }
 }
 
-TEST_CASE("[stackarr] -- size") {
+TEST_CASE("[stacklst] -- size") {
     int n = 100;
-    StackArray<float> stack;
+    Stack<float> stack;
     CHECK(stack.Size() == 0);
     for (int i = 0; i < n; ++i) stack.Push(i);
     CHECK(stack.Size() == n);
@@ -26,9 +27,9 @@ TEST_CASE("[stackarr] -- size") {
     CHECK(stack.Size() == n / 2);
 }
 
-TEST_CASE("[stackarr] -- pop top") {
+TEST_CASE("[stacklst] -- pop top") {
     int n = 100;
-    StackArray<float> stack;
+    Stack<float> stack;
     for (int i = 0; i < n; ++i) stack.Push(i);
     for (int i = 0; i < n / 2; ++i) {
         CHECK(stack.Top() == (n - i - 1));
@@ -36,9 +37,9 @@ TEST_CASE("[stackarr] -- pop top") {
     }
 }
 
-TEST_CASE("[stackarr] -- move constructors") {
+TEST_CASE("[stacklst] -- move constructors") {
     int n = 100;
-    StackArray<float> stack;
+    Stack<float> stack;
     for (int i = 0; i < n; ++i) stack.Push(i);
-    StackArray<float> copy(std::move(stack));
+    Stack<float> copy(std::move(stack));
 }

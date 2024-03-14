@@ -38,6 +38,5 @@ TEST_CASE("[stacklstt] -- move constructor") {
 
   for (int i = 0; i < 1000; ++i) stack.Push(std::string(100, 'a'));
 
-  MoveTester<StackArrT<std::string>, true> tester;
-  CHECK(tester.Test(stack) == true);
+  CHECK(TestMoveSemantics<StackArrT<std::string>>(stack));
 }

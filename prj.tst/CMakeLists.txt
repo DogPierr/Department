@@ -23,3 +23,6 @@ target_link_libraries(hash_doctest doctest::doctest hashmap)
 
 add_executable(mm_doctest mm/mm_doctest.cpp)
 target_link_libraries(mm_doctest doctest::doctest mm)
+
+add_executable(movetest_doctest movetester/movetest_doctest.cpp)
+target_link_libraries(movetest_doctest doctest::doctest movetest)

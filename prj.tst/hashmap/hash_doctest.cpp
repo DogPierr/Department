@@ -1,4 +1,4 @@
-#include "Hashmap/hash.h"
+#include "Hashmap/hash_new.h"
 
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 

@@ -2,6 +2,8 @@
 #define MEMORY_MANAGER_HEAD_H_2024_03_07
 
 namespace lab618 {
+
+
 template <class T>
 class CMemoryManager {
  private:
@@ -79,13 +81,18 @@ class CMemoryManager {
   // Очистка данных, зависит от m_isDeleteElementsOnDestruct
   void clear() {
     block* p = m_pBlocks;
-    while (p != nullptr) {
-      block* pnext = p->pnext;
-      deleteBlock(p);
-      p = pnext;
-    }
     m_pBlocks = nullptr;
     m_pCurrentBlk = nullptr;
+    bool* is_int = nullptr;
+    if (m_isDeleteElementsOnDestruct) {
+      is_int = new bool[m_blkSize];
+    }
+    while (p != nullptr) {
+      block* pnext = p->pnext;
+      deleteBlock(p, is_int);
+      p = pnext;
+    }
+    delete[] is_int;
   }
 
  private:
@@ -111,13 +118,11 @@ class CMemoryManager {
   }
 
   // Освободить память блока данных. Применяется в clear
-  void deleteBlock(block* p) {
-    bool* is_int = new bool[m_blkSize];
-    for (int i = 0; i < m_blkSize; i++) {
-      is_int[i] = false;
-    }
-
+  void deleteBlock(block* p, bool* is_int) {
     if (m_isDeleteElementsOnDestruct) {
+      for (int i = 0; i < m_blkSize; i++) {
+        is_int[i] = false;
+      }
       while (p->firstFreeIndex < m_blkSize) {
         int next = *reinterpret_cast<int*>(p->pdata + p->firstFreeIndex);
         is_int[p->firstFreeIndex] = true;
@@ -133,7 +138,6 @@ class CMemoryManager {
       throw CException();
     }
 
-    delete[] is_int;
     delete p;
   }
 

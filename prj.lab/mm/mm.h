@@ -43,17 +43,17 @@ class CMemoryManager {
     T* res;
     while (p != nullptr) {
       if (p->firstFreeIndex < m_blkSize) {
-        res = &p->pdata[p->firstFreeIndex];
-        p->firstFreeIndex = reinterpret_cast<int>(res);
-        ++(p->usedCount);
+        res = p->pdata + p->firstFreeIndex;
+        p->firstFreeIndex = *reinterpret_cast<int*>(res);
+        ++p->usedCount;
         new (res) T();
         return res;
       }
       p = p->pnext;
     }
     p = newBlock();
-    res = &p->pdata[p->firstFreeIndex];
-    p->firstFreeIndex = reinterpret_cast<int>(res);
+    res = p->pdata + p->firstFreeIndex;
+    p->firstFreeIndex = *reinterpret_cast<int*>(res);
     ++p->usedCount;
     new (res) T();
     return res;
@@ -65,8 +65,9 @@ class CMemoryManager {
     while (pblk != nullptr) {
       if (p - pblk->pdata < m_blkSize && p - pblk->pdata >= 0) {
         p->~T();
-        p = reinterpret_cast<T*>(pblk->firstFreeIndex);
-        pblk->firstFreeIndex = reinterpret_cast<int>(p);
+        int* ptr_next = reinterpret_cast<int*>(p);
+        *ptr_next = pblk->firstFreeIndex;
+        pblk->firstFreeIndex = static_cast<int>(p - pblk->pdata);
         --pblk->usedCount;
         return true;
       }
@@ -91,9 +92,10 @@ class CMemoryManager {
   // Создать новый блок данных. применяется в newObject
   block* newBlock() {
     block* p = new block;
-    p->pdata = new T[m_blkSize];
+    p->pdata = reinterpret_cast<T*>(new char[m_blkSize * sizeof(T)]);
     for (int i = 0; i < m_blkSize; i++) {
-      p->pdata + i = reinterpret_cast<T*>(i + 1);
+       int* next = reinterpret_cast<int*>(p->pdata + i);
+       *next = i + 1;
     }
     p->pnext = nullptr;
     p->firstFreeIndex = 0;
@@ -110,14 +112,28 @@ class CMemoryManager {
 
   // Освободить память блока данных. Применяется в clear
   void deleteBlock(block* p) {
+    bool* is_int = new bool[m_blkSize];
+    for (int i = 0; i < m_blkSize; i++) {
+      is_int[i] = false;
+    }
+
     if (m_isDeleteElementsOnDestruct) {
       while (p->firstFreeIndex < m_blkSize) {
-        int next = reinterpret_cast<int>(p->pdata + p->firstFreeIndex);
-        new(p->pdata + p->firstFreeIndex) T();
+        int next = *reinterpret_cast<int*>(p->pdata + p->firstFreeIndex);
+        is_int[p->firstFreeIndex] = true;
         p->firstFreeIndex = next;
       }
-      delete[] p->pdata;
+      for (int i = 0; i < m_blkSize; i++) {
+        if (!is_int[i]) {
+          p->pdata[i].~T();
+        }
+      }
+      delete[] reinterpret_cast<char*>(p->pdata);
+    } else if (p->usedCount > 0) {
+      throw CException();
     }
+
+    delete[] is_int;
     delete p;
   }
 

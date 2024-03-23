@@ -48,3 +48,4 @@ bin.*
 cmake-build-debug
 cmake-build-debug
 .ipynb_checkpoints
+.idea

@@ -1,0 +1,2 @@
+add_executable(stringtester stringtester.cpp)
+target_link_libraries(stringtester movetest)

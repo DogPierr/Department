@@ -35,22 +35,33 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
                           ? i + radius_border_
                           : i + radius_border_ - borderPoints_.size()];
 
+    cv::Point norm = GetNormVector(
+        p2,
+        borderPoints_[i + 1 < borderPoints_.size()
+                          ? i + 1
+                          : i + 1 - borderPoints_.size()] -
+            p2,
+        borderPoints_[i - 1 >= 0 ? i - 1 : borderPoints_.size() + i - 1] - p2);
+
     double angle = std::acos((p2 - p1).dot(p3 - p2) /
                              (cv::norm(p2 - p1) * cv::norm(p3 - p2))) *
                    180 / M_PI;
-
-    if (IsJunction(angle, result)) {
+    if (IsJunction(angle, result, p2) &&
+        SameHalfPlane(norm, p1 - p2, p3 - p2)) {
       result.push_back(p2);
-      cv::arrowedLine(*this, p1, p2, cv::Scalar(0, 255, 0), 2);
-      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 2);
+//      cv::arrowedLine(*this, p2, p1, cv::Scalar(0, 255, 0), 1);
+//      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
+      cv::arrowedLine(*this, p2, p2 + 5 * norm, cv::Scalar(0, 0, 255), 1);
     }
-    cv::arrowedLine(*this, borderPoints_[i],
-             borderPoints_[i > 0 ? i - 1 : borderPoints_.size() - 1],
-             cv::Scalar(0, 0, 255), 2);
+    //    cv::arrowedLine(*this, borderPoints_[i],
+    //                    borderPoints_[i > 0 ? i - 1 : borderPoints_.size() -
+    //                    1], cv::Scalar(0, 0, 255), 2);
   }
 
+  cv::circle(*this, borderPoints_[0], 5, cv::Scalar(255, 0, 0), 2);
+  cv::circle(*this, borderPoints_[borderPoints_.size() - 1], 5, cv::Scalar(255, 0, 0), 2);
   for (const cv::Point& point : result) {
-    cv::circle(*this, point, 5, cv::Scalar(255, 0, 0), 2);
+//    cv::circle(*this, point, 5, cv::Scalar(255, 0, 0), 2);
   }
   return result;
 }
@@ -74,11 +85,48 @@ void JunctionMat::Save(const std::string& filename) {
   cv::imwrite(filename, *this);
 }
 
-bool JunctionMat::IsJunction(double angle,
-                             const std::vector<cv::Point>& result) {
+bool JunctionMat::IsJunction(double angle, const std::vector<cv::Point>& result,
+                             const cv::Point& p) {
   return angle > angle_border_ && angle < 180 &&
-         (result.size() <= 1 || cv::norm(result[result.size() - 1] -
-                                         result[result.size() - 2]) > 0.99);
+         (result.size() <= 1 || cv::norm(result[result.size() - 1] - p) > 7);
+}
+
+bool JunctionMat::SameHalfPlane(const cv::Point& norm, const cv::Point& v1,
+                                const cv::Point& v2) {
+  float crossProduct1 = norm.x * v1.x + norm.y * v1.y;
+  float crossProduct2 = norm.x * v2.x + norm.y * v2.y;
+
+  return crossProduct1 > 0 && crossProduct2 > 0;
+}
+
+cv::Point JunctionMat::GetNormVector(const cv::Point& p, const cv::Point& p1,
+                                     const cv::Point& p2) {
+  cv::Point norm(p2 + p1);
+  //  std::vector<int> xAdd = {0, 1, 2, 3, 4};
+  //  std::vector<int> yAdd = {0, 1, 2, 3, 4};
+  //  for (auto x : xAdd) {
+  //    for (auto y : yAdd) {
+  //      norm.x += x;
+  //      norm.y += y;
+  //      auto color = this->at<cv::Vec3b>(norm.y, norm.x);
+  //      if (color[0] == 255 && color[1] == 255 && color[2] == 255) {
+  //        return norm - p;
+  //      }
+  //      norm.x -= x;
+  //      norm.y -= y;
+  //    }
+  //  }
+  norm += p;
+  if (norm.x >= 0 && norm.y >= 0 && norm.x < this->cols &&
+      norm.y < this->rows) {
+    auto color = this->at<cv::Vec3b>(norm.y, norm.x);
+    if (color[0] == 255 && color[1] == 255 && color[2] == 255) {
+      return norm - p;
+    }
+    norm -= p;
+    norm *= -1;
+  }
+  return norm;
 }
 
 void processImagesInFolder(const std::string& folderPath,
@@ -88,7 +136,7 @@ void processImagesInFolder(const std::string& folderPath,
   for (const auto& entry : std::filesystem::directory_iterator(folderPath)) {
     if (entry.is_regular_file() && (entry.path().extension() == ".jpg" ||
                                     entry.path().extension() == ".png")) {
-      JunctionMat junctionMat(entry.path().string(), 15, 100);
+      JunctionMat junctionMat(entry.path().string(), 10, 100);
 
       if (junctionMat.empty()) {
         std::cerr << "Error loading image: " << entry.path().string()

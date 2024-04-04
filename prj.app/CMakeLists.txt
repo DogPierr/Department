@@ -1,3 +1,4 @@
 add_subdirectory(stackprofiler)
 add_subdirectory(jsonreader)
 add_subdirectory(stringtester)
+add_subdirectory(timertest)

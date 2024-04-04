@@ -12,6 +12,7 @@ typedef int(CompareSortType)(const void* pElem1, const void* pElem2);
 
 void mergeSort(void** ppArray, int length, CompareSortType pCompareFunc);
 void heapSort(void** ppArray, int length, CompareSortType pCompareFunc);
+void quickSort(void** ppArray, int length, CompareSortType pCompareFunc);
 
 template <class T>
 void mergeSort(T** ppArray, int length,
@@ -19,14 +20,18 @@ void mergeSort(T** ppArray, int length,
   mergeSort(reinterpret_cast<void**>(ppArray), length,
             (CompareSortType*)pCompareFunc);
 }
-
 template <class T>
 void heapSort(T** ppArray, int length,
               int(pCompareFunc)(const T* pElem1, const T* pElem2)) {
   heapSort(reinterpret_cast<void**>(ppArray), length,
            (CompareSortType*)pCompareFunc);
 }
-
+template <class T>
+void quickSort(T** ppArray, int length,
+               int(pCompareFunc)(const T* pElem1, const T* pElem2)) {
+  quickSort(reinterpret_cast<void**>(ppArray), length,
+            (CompareSortType*)pCompareFunc);
+}
 };  // namespace templates
 
 #endif  // #define SORT_HEAD_H_2024_03_21

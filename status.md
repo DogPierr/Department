@@ -1,8 +1,8 @@
-CHECK: 20240307-081113
-ERROR: file prj.cw/CMakeLists.txt is absent
-ERROR: file prj.lab/stackarrt/CMakeLists.txt is absent
-ERROR: file prj.lab/stacklstt/CMakeLists.txt is absent
-OK: CMake generator successed
-ERROR: CMake build (MSVC x64) failed
+CHECK: 20240404-101258
+ERROR: path prj.app/stack_profiler does not exist
+ERROR: path prj.app/stack_profiler/stack_profiler.cpp does not exist
+ERROR: path prj.app/stack_profiler/readme.md does not exist
 STATUS: lab stackarr - test-failed
+ERROR: lab stackarrt - test build failed
 ERROR: lab stacklst - test build failed
+ERROR: lab stacklstt - test build failed

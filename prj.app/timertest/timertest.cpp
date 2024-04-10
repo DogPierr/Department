@@ -1,8 +1,9 @@
 #include "timer/timer.h"
 #include <iostream>
 
+
 void A(std::string s) {
-  Timer timer("A");
+  Timer timer(__FUNCTION__ );
   for (int i = 0; i < 100; ++i) {
     std::cout << "iteration: " << i << std::flush;
   }
@@ -10,7 +11,7 @@ void A(std::string s) {
 }
 
 void B(std::string& s) {
-  Timer timer("B");
+  Timer timer(__FUNCTION__ );
   for (int i = 0; i < 1000; ++i) {
     std::cout << "iteration: " << i << std::flush;
   }
@@ -18,8 +19,9 @@ void B(std::string& s) {
 }
 
 int main() {
-  std::string s(1000, 'a');
+  std::string s(1, 'a');
   A(s);
+  B(s);
   B(s);
   Timer t("");
   t.WriteToFile("../prj.app/timertest/log.csv");

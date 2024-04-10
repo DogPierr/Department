@@ -1,14 +1,14 @@
 #ifndef MIPT2024S_3_TIMER_H
 #define MIPT2024S_3_TIMER_H
 
-#include <string>
 #include <chrono>
+#include <string>
 #include <unordered_map>
 #include <vector>
 
 class Timer {
  public:
-  Timer(const std::string& function_name);
+  Timer(const char* function_name);
 
   void WriteToFile(const std::string& file_name);
 
@@ -16,13 +16,13 @@ class Timer {
 
  private:
   struct FileTimer {
-    std::string file_name_;
+    const char* file_name_;
     long time_;
     long n_;
   };
 
-  std::string function_name_;
-  inline static std::unordered_map<std::string, FileTimer> timers_;
+  const char* function_name_;
+  inline static std::unordered_map<const char*, FileTimer> timers_;
   std::chrono::time_point<std::chrono::high_resolution_clock> timer_;
 };
 

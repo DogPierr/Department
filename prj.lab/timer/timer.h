@@ -12,8 +12,8 @@ struct FileTimer {
   FileTimer() : file_name_(""), time_(0), n_(0) {}
   FileTimer(const char* fileName) : file_name_(fileName), time_(0), n_(0) {}
   const char* file_name_;
-  unsigned long long time_;
-  unsigned long long n_;
+  std::atomic_ullong time_;
+  std::atomic_ullong n_;
 };
 
 class Ancor {

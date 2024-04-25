@@ -23,7 +23,9 @@ Ancor::Ancor(bool flag) : is_measuring_(flag) {}
 Ancor::Ancor(int count, const char* name, bool flag)
     : count(count), name(name), is_measuring_(flag) {
   if (is_measuring_) {
-    data[count] = FileTimer(name);
+    data[count].file_name_ = name;
+    data[count].n_ = 0;
+    data[count].time_ = 0;
     ptr = &data[count];
   }
 }
@@ -34,7 +36,7 @@ void Ancor::WriteToFile(const std::string& file_name) {
   if (is_measuring_) {
     std::fstream file(file_name, std::fstream::out);
     for (int i = 0; i < count; ++i) {
-      std::cout << data[i].file_name_ << ',' << data[i].time_ << ','
+      file << data[i].file_name_ << ',' << data[i].time_ << ','
                 << data[i].n_ << '\n';
     }
   }

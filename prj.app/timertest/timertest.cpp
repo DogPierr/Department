@@ -1,11 +1,11 @@
 #include "timer/timer.h"
 #include <iostream>
 
-bool flag = false;
+bool flag = true;
 
 #include "stackarr/stackarr.hpp"
 
-#define test false
+#define test true
 
 StackArr stack;
 

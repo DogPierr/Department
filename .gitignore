@@ -49,3 +49,4 @@ cmake-build-debug
 cmake-build-debug
 .ipynb_checkpoints
 .idea
+prj.app/hashspeed/hashspeed.csv

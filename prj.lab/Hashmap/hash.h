@@ -1,8 +1,7 @@
 #ifndef HASH_HEAD_H_2024_03_07
 #define HASH_HEAD_H_2024_03_07
-
-#include "mm.h" // необходимо использовать свой memorymanager
-
+#pragma once
+#include "mm/mm.h" // необходимо использовать свой memorymanager
 #include <string>
 
 

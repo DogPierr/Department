@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/sort_doctest.dir/sort_doctest.cpp.o -o ../../../bin.rel/sort_doctest  ../../prj.lab/sort/libsort.a 

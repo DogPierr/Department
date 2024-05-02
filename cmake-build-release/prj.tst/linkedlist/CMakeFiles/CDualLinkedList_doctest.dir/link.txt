@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/CDualLinkedList_doctest.dir/CDualLinkedList_doctest.cpp.o -o ../../../bin.rel/CDualLinkedList_doctest  ../../prj.lab/CDualLinkedList/libCDualLinkedList.a 

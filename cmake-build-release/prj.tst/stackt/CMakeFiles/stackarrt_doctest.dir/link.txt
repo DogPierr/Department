@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/stackarrt_doctest.dir/stackarrt_doctest.cpp.o -o ../../../bin.rel/stackarrt_doctest  ../../prj.lab/stackarrt/libstackarrt.a ../../prj.lab/movetest/libmovetest.a 

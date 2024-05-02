@@ -3,6 +3,7 @@
 #include <fstream>
 #include <random>
 #include <string>
+#include <iostream>
 
 #include "Hashmap/hash.h"
 #include "avltree/avltree.h"
@@ -10,8 +11,8 @@
 // #include "mm/mm.h"
 
 #define LOGFILE "../prj.app/hashspeed/hashspeed.csv"
-#define BLOCKSIZE 1000
-#define HASHTABLESIZE 100000
+#define BLOCKSIZE 1000000
+#define HASHTABLESIZE 1000000
 
 std::string generateRandomString(int minLength, int maxLength) {
   static const char charset[] =
@@ -42,7 +43,7 @@ class TimerProfiler {
   ~TimerProfiler() {
     auto end = std::chrono::high_resolution_clock::now();
     long duration =
-        std::chrono::duration_cast<std::chrono::nanoseconds>(end - start_)
+        std::chrono::duration_cast<std::chrono::microseconds>(end - start_)
             .count();
 
     file_ << function_name_ << ',' << duration << ',' << amount_ << '\n';
@@ -91,22 +92,24 @@ class SortedArray {
   SortedArray(Object** objects, size_t size) {
     data_ = objects;
     size_ = size;
-    TimerProfiler(fileLog, __FUNCTION__, size_);
+    TimerProfiler t(fileLog, __FUNCTION__, size_);
     templates::mergeSort(data_, size_, ObjectComparator);
   }
 
   void search(const Object* object, const char* stringName) {
-    TimerProfiler(fileLog, stringName, size_);
+//    TimerProfiler t(fileLog, stringName, size_);
     auto it = std::lower_bound(data_, data_ + size_, object);
   }
 
   void searchSameSort() {
+    TimerProfiler t(fileLog, __FUNCTION__, size_);
     for (size_t i = 0; i < size_; ++i) {
       search(data_[i], __FUNCTION__);
     }
   }
 
   void searchRandomSort(Object** randomData, size_t randomSize) {
+    TimerProfiler t(fileLog, __FUNCTION__, randomSize);
     for (size_t i = 0; i < randomSize; ++i) {
       search(randomData[i], __FUNCTION__);
     }
@@ -122,35 +125,38 @@ class AvlTree {
   AvlTree(Object** objects, size_t size) : tree_(BLOCKSIZE) {
     data_ = objects;
     size_ = size;
-    TimerProfiler(fileLog, "AVLTreeBuild", size_);
+    TimerProfiler t(fileLog, "AVLTreeBuild", size_);
     for (size_t i = 0; i < size_; ++i) {
       tree_.add(data_[i]);
     }
   }
 
   void search(const Object& object, const char* stringName) {
-    TimerProfiler(fileLog, stringName, size_);
+//    TimerProfiler t(fileLog, stringName, size_);
     tree_.find(object);
   }
 
   void searchSameAVL() {
+    TimerProfiler t(fileLog, __FUNCTION__, size_);
     for (size_t i = 0; i < size_; ++i) {
       search(*data_[i], __FUNCTION__);
     }
   }
 
   void searchRandomAVL(Object** randomData, size_t randomSize) {
+    TimerProfiler t(fileLog, __FUNCTION__, randomSize);
     for (size_t i = 0; i < randomSize; ++i) {
       search(*randomData[i], __FUNCTION__);
     }
   }
 
   void remove(const Object& object, const char* stringName) {
-    TimerProfiler(fileLog, stringName, size_);
+//    TimerProfiler t(fileLog, stringName, size_);
     tree_.remove(object);
   }
 
   void removeSameAVL() {
+    TimerProfiler t(fileLog, __FUNCTION__, size_);
     for (size_t i = 0; i < size_; ++i) {
       remove(*data_[i], __FUNCTION__);
     }
@@ -167,35 +173,38 @@ class HashMap {
   HashMap(Object** objects, size_t size) : map_(HASHTABLESIZE, BLOCKSIZE) {
     data_ = objects;
     size_ = size;
-    TimerProfiler(fileLog, "HashMapBuild", size_);
+    TimerProfiler t(fileLog, "HashMapBuild", size_);
     for (size_t i = 0; i < size_; ++i) {
       map_.add(data_[i]);
     }
   }
 
   void search(const Object& object, const char* stringName) {
-    TimerProfiler(fileLog, stringName, size_);
+//    TimerProfiler t(fileLog, stringName, size_);
     map_.find(object);
   }
 
   void searchSameHash() {
+    TimerProfiler t(fileLog, __FUNCTION__, size_);
     for (size_t i = 0; i < size_; ++i) {
-      search(*data_[i], __FUNCTION__);
+     search(*data_[i], __FUNCTION__);
     }
   }
 
   void searchRandomHash(Object** randomData, size_t randomSize) {
+    TimerProfiler t(fileLog, __FUNCTION__, randomSize);
     for (size_t i = 0; i < randomSize; ++i) {
       search(*randomData[i], __FUNCTION__);
     }
   }
 
   void remove(const Object& object, const char* stringName) {
-    TimerProfiler(fileLog, stringName, size_);
+//    TimerProfiler t(fileLog, stringName, size_);
     map_.remove(object);
   }
 
   void removeSameHash() {
+    TimerProfiler t(fileLog, __FUNCTION__, size_);
     for (size_t i = 0; i < size_; ++i) {
       remove(*data_[i], __FUNCTION__);
     }
@@ -212,9 +221,10 @@ void Test() {
   size_t N_max = 1000000;
 
   size_t step = static_cast<size_t>(
-      std::round(static_cast<double>(N_max - N_min) / 3.0));
+      std::round(static_cast<double>(N_max - N_min) / 15.0));
 
   for (size_t N = N_min; N <= N_max; N += step) {
+    std::cout << "N = " << N << std::endl;
     Object** data = new Object*[N];
     for (size_t i = 0; i < N; ++i) {
       data[i] =

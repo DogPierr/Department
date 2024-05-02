@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/stringtester.dir/stringtester.cpp.o -o ../../../bin.rel/stringtester  ../../prj.lab/movetest/libmovetest.a 

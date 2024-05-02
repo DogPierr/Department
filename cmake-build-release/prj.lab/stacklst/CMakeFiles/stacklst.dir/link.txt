@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstacklst.a CMakeFiles/stacklst.dir/stacklst.cpp.o
+/usr/bin/ranlib libstacklst.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmovetest.a CMakeFiles/movetest.dir/movetest.cpp.o
+/usr/bin/ranlib libmovetest.a

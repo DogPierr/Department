@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCDualLinkedList.a CMakeFiles/CDualLinkedList.dir/CDualLinkedList.cpp.o
+/usr/bin/ranlib libCDualLinkedList.a

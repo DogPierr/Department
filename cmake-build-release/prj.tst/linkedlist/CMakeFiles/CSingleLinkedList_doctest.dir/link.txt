@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/CSingleLinkedList_doctest.dir/CSingleLinkedList_doctest.cpp.o -o ../../../bin.rel/CSingleLinkedList_doctest  ../../prj.lab/CSingleLinkedList/libCSingleLinkedList.a 

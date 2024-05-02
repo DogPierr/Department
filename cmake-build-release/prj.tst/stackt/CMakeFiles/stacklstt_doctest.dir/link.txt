@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/stacklstt_doctest.dir/stacklstt_doctest.cpp.o -o ../../../bin.rel/stacklstt_doctest  ../../prj.lab/stacklstt/libstacklstt.a ../../prj.lab/movetest/libmovetest.a 

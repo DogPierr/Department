@@ -41,7 +41,7 @@ class CMemoryManager {
 
   // Получить адрес нового элемента из менеджера
   T* newObject() {
-    block* p = m_pBlocks;
+    block* p = m_pCurrentBlk;
     T* res;
     while (p != nullptr) {
       if (p->firstFreeIndex < m_blkSize) {

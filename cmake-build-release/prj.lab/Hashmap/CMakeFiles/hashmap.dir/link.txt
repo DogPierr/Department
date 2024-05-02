@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhashmap.a CMakeFiles/hashmap.dir/hash.cpp.o
+/usr/bin/ranlib libhashmap.a

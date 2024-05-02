@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/data.dir/jsonreader.cpp.o -o ../../../bin.rel/data 

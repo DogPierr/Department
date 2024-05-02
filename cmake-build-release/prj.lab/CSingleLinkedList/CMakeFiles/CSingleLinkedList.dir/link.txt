@@ -1,0 +1,2 @@
+/usr/bin/ar qc libCSingleLinkedList.a CMakeFiles/CSingleLinkedList.dir/CSingleLinkedList.cpp.o
+/usr/bin/ranlib libCSingleLinkedList.a

@@ -1,2 +1,0 @@
-/usr/bin/ar qc libstackarr.a CMakeFiles/stackarr.dir/stackarr.cpp.o
-/usr/bin/ranlib libstackarr.a

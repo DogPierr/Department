@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/mm_doctest.dir/mm_doctest.cpp.o -o ../../../bin.rel/mm_doctest  ../../prj.lab/mm/libmm.a 

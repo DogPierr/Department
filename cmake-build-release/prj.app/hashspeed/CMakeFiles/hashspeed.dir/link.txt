@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/hashspeed.dir/hashspeed.cpp.o -o ../../../bin.rel/hashspeed  ../../prj.lab/avltree/libavltree.a ../../prj.lab/Hashmap/libhashmap.a ../../prj.lab/sort/libsort.a ../../prj.lab/mm/libmm.a 

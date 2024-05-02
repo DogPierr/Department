@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/movetest_doctest.dir/movetest_doctest.cpp.o -o ../../../bin.rel/movetest_doctest  ../../prj.lab/movetest/libmovetest.a 

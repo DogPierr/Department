@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/timertest.dir/timertest.cpp.o -o ../../../bin.rel/timertest  ../../prj.lab/timer/libtimer.a ../../prj.lab/stackarr/libstackarr.a 

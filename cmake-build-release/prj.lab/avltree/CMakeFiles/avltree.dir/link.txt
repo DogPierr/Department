@@ -1,2 +1,0 @@
-/usr/bin/ar qc libavltree.a CMakeFiles/avltree.dir/avltree.cpp.o
-/usr/bin/ranlib libavltree.a

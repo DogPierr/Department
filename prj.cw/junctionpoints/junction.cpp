@@ -126,6 +126,48 @@ JunctionMat::JunctionMat(const std::string& filename, int radius_border,
   FindBorderPoints();
 }
 
+void JunctionMat::DrawDividers(
+    std::vector<cv::Point> result,
+    std::vector<std::vector<cv::Point>> intersections) {
+  while (!result.empty()) {
+    cv::Point best_1;
+    cv::Point best_intersection_1(0, 0);
+    int i_1 = 0;
+    for (int i = 0; i < result.size(); ++i) {
+      for (int j = 0; j < intersections[i].size(); ++j) {
+        if (intersections[i][j].y > best_intersection_1.y) {
+          best_intersection_1 = intersections[i][j];
+          best_1 = result[i];
+          i_1 = i;
+        }
+      }
+    }
+
+    result.erase(result.begin() + i_1);
+    intersections.erase(intersections.begin() + i_1);
+
+    if (result.empty()) break;
+
+    cv::Point best_2;
+    cv::Point best_intersection_2(0, 100000);
+    int i_2 = 0;
+    for (int i = 0; i < result.size(); ++i) {
+      for (int j = 0; j < intersections[i].size(); ++j) {
+        if (intersections[i][j].y < best_intersection_2.y) {
+          best_intersection_2 = intersections[i][j];
+          best_2 = result[i];
+          i_2 = i;
+        }
+      }
+    }
+
+    result.erase(result.begin() + i_2);
+    intersections.erase(intersections.begin() + i_2);
+
+    cv::line(*this, best_1, best_2, cv::Scalar(255, 0, 255), 1);
+  }
+}
+
 std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
   std::vector<cv::Point> result;
   std::vector<size_t> indices;
@@ -162,15 +204,17 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
 //      for (const auto& inter : cur_inter) {
 //        cv::circle(*this, inter, 5, cv::Scalar(0, 0, 255), 2);
 //      }
-//      cv::arrowedLine(*
+      //      cv::arrowedLine(*
       //      this, p2, p1, cv::Scalar(0, 255, 0), 1);
-//      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
-//      cv::arrowedLine(*this, p2, p2 + norm, cv::Scalar(0, 0, 255), 1);
+      //      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
+      //      cv::arrowedLine(*this, p2, p2 + norm, cv::Scalar(0, 0, 255), 1);
     }
     //    cv::arrowedLine(*this, borderPoints_[i],
     //                    borderPoints_[i > 0 ? i - 1 : borderPoints_.size() -
     //                    1], cv::Scalar(0, 0, 255), 2);
   }
+
+  DrawDividers(result, intersections);
 
   //  cv::circle(*this, borderPoints_[0], 5, cv::Scalar(255, 0, 0), 2);
   //  cv::circle(*this, borderPoints_[borderPoints_.size() - 1], 5,
@@ -227,8 +271,8 @@ bool JunctionMat::SameHalfPlane(const cv::Point& norm, const cv::Point& v1,
 cv::Point JunctionMat::GetNormVector(const cv::Point& p, const cv::Point& p1,
                                      const cv::Point& p2) {
   cv::Point norm(p2 + p1);
-//  norm /= cv::norm(norm);
-//  norm *= 10;
+  //  norm /= cv::norm(norm);
+  //  norm *= 10;
   //  std::vector<int> xAdd = {0, 1, 2, 3, 4};
   //  std::vector<int> yAdd = {0, 1, 2, 3, 4};
   //  for (auto x : xAdd) {

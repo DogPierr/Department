@@ -30,5 +30,8 @@ class JunctionMat : public cv::Mat {
   void FindBorderPoints();
   bool IsJunction(double angle, const std::vector<cv::Point>& result,
                   cv::Point p);
+
+  void DrawDividers(std::vector<cv::Point> result,
+                    std::vector<std::vector<cv::Point>> intersections);
 };
 #endif  // MIPT2024S_3_JUNCTION_H

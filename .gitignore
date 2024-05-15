@@ -46,7 +46,7 @@ bin.*
 !build.bat
 
 cmake-build-debug
-cmake-build-debug
+cmake-build-release
 .ipynb_checkpoints
 .idea
 prj.app/hashspeed/hashspeed.csv

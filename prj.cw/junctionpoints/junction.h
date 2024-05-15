@@ -29,6 +29,6 @@ class JunctionMat : public cv::Mat {
 
   void FindBorderPoints();
   bool IsJunction(double angle, const std::vector<cv::Point>& result,
-                  const cv::Point& p);
+                  cv::Point p);
 };
 #endif  // MIPT2024S_3_JUNCTION_H

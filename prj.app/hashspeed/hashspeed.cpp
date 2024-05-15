@@ -1,9 +1,9 @@
 #include <algorithm>
 #include <chrono>
 #include <fstream>
+#include <iostream>
 #include <random>
 #include <string>
-#include <iostream>
 
 #include "Hashmap/hash.h"
 #include "avltree/avltree.h"
@@ -11,8 +11,10 @@
 // #include "mm/mm.h"
 
 #define LOGFILE "../prj.app/hashspeed/hashspeed.csv"
-#define BLOCKSIZE 1000000
-#define HASHTABLESIZE 1000000
+#define BLOCKSIZE 100'000
+#define HASHTABLESIZE 1'000'000
+
+const auto hash_func = std::hash<std::string>{};
 
 std::string generateRandomString(int minLength, int maxLength) {
   static const char charset[] =
@@ -75,16 +77,7 @@ int ObjectComparator(const Object* a, const Object* b) {
 }
 
 unsigned int ObjectHash(const Object* pElement) {
-  unsigned int hash = 5381;
-  int c;
-  int i = 0;
-
-  while ((c = pElement->key1[i])) {
-    hash = ((hash << 5) + hash) + c;
-    ++i;
-  }
-
-  return hash;
+  return hash_func(pElement->key1);
 }
 
 class SortedArray {
@@ -93,12 +86,14 @@ class SortedArray {
     data_ = objects;
     size_ = size;
     TimerProfiler t(fileLog, __FUNCTION__, size_);
-    templates::mergeSort(data_, size_, ObjectComparator);
+    templates::quickSort(data_, size_, ObjectComparator);
   }
 
-  void search(const Object* object, const char* stringName) {
-//    TimerProfiler t(fileLog, stringName, size_);
-    auto it = std::lower_bound(data_, data_ + size_, object);
+  bool search(const Object* object, const char* stringName) {
+    //    TimerProfiler t(fileLog, stringName, size_);
+    auto it =
+        std::binary_search(data_, data_ + size_, object, ObjectComparator);
+    return it;
   }
 
   void searchSameSort() {
@@ -132,7 +127,7 @@ class AvlTree {
   }
 
   void search(const Object& object, const char* stringName) {
-//    TimerProfiler t(fileLog, stringName, size_);
+    //    TimerProfiler t(fileLog, stringName, size_);
     tree_.find(object);
   }
 
@@ -151,7 +146,7 @@ class AvlTree {
   }
 
   void remove(const Object& object, const char* stringName) {
-//    TimerProfiler t(fileLog, stringName, size_);
+    //    TimerProfiler t(fileLog, stringName, size_);
     tree_.remove(object);
   }
 
@@ -180,14 +175,14 @@ class HashMap {
   }
 
   void search(const Object& object, const char* stringName) {
-//    TimerProfiler t(fileLog, stringName, size_);
+    //    TimerProfiler t(fileLog, stringName, size_);
     map_.find(object);
   }
 
   void searchSameHash() {
     TimerProfiler t(fileLog, __FUNCTION__, size_);
     for (size_t i = 0; i < size_; ++i) {
-     search(*data_[i], __FUNCTION__);
+      search(*data_[i], __FUNCTION__);
     }
   }
 
@@ -199,7 +194,7 @@ class HashMap {
   }
 
   void remove(const Object& object, const char* stringName) {
-//    TimerProfiler t(fileLog, stringName, size_);
+    //    TimerProfiler t(fileLog, stringName, size_);
     map_.remove(object);
   }
 
@@ -221,7 +216,7 @@ void Test() {
   size_t N_max = 1000000;
 
   size_t step = static_cast<size_t>(
-      std::round(static_cast<double>(N_max - N_min) / 15.0));
+      std::round(static_cast<double>(N_max - N_min) / 10.0));
 
   for (size_t N = N_min; N <= N_max; N += step) {
     std::cout << "N = " << N << std::endl;
@@ -235,20 +230,40 @@ void Test() {
       dataRandom[i] =
           new Object(generateRandomString(7, 20), generateRandomString(7, 20));
     }
+    {
+      SortedArray sortedArray(data, N);
+      sortedArray.searchSameSort();
+      sortedArray.searchRandomSort(dataRandom, 2 * N);
+    }
+//    {
+//      SortedArray* sortedArray = new SortedArray(data, N);
+//      TimerProfiler t(fileLog, "SortedArrayClear", N);
+//      sortedArray->~SortedArray();
+//    }
 
-    SortedArray sortedArray(data, N);
-    sortedArray.searchSameSort();
-    sortedArray.searchRandomSort(dataRandom, 2 * N);
+    {
+      AvlTree avlTree(data, N);
+      avlTree.searchSameAVL();
+      avlTree.searchRandomAVL(dataRandom, 2 * N);
+      avlTree.removeSameAVL();
+    }
+//    {
+//      AvlTree* avlTree = new AvlTree(data, N);
+//      TimerProfiler t(fileLog, "AvlTreeClear", N);
+//      avlTree->~AvlTree();
+//    }
 
-    AvlTree avlTree(data, N);
-    avlTree.searchSameAVL();
-    avlTree.searchRandomAVL(dataRandom, 2 * N);
-    avlTree.removeSameAVL();
-
-    HashMap hashMap(data, N);
-    hashMap.searchSameHash();
-    hashMap.searchRandomHash(dataRandom, 2 * N);
-    hashMap.removeSameHash();
+    {
+      HashMap hashMap(data, N);
+      hashMap.searchSameHash();
+      hashMap.searchRandomHash(dataRandom, 2 * N);
+      hashMap.removeSameHash();
+    }
+//    {
+//      HashMap* hashMap = new HashMap(data, N);
+//      TimerProfiler t(fileLog, "HashMapClear", N);
+//      hashMap->~HashMap();
+//    }
   }
 }
 

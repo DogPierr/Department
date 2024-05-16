@@ -5,10 +5,10 @@
 #include "stackarr/stackarr.hpp"
 #include "stacklst/stacklst.hpp"
 
-#define STACK_ARR_TIME "../prj.app/stackprofiler/data/stack_arr_time.txt"
-#define STACK_LST_TIME "../prj.app/stackprofiler/data/stack_lst_time.txt"
-#define STACK_ARR_PUSH "../prj.app/stackprofiler/data/stack_arr_push.txt"
-#define STACK_LST_PUSH "../prj.app/stackprofiler/data/stack_lst_push.txt"
+#define STACK_ARR_TIME "../prj.app/stack_profiler/data/stack_arr_time.txt"
+#define STACK_LST_TIME "../prj.app/stack_profiler/data/stack_lst_time.txt"
+#define STACK_ARR_PUSH "../prj.app/stack_profiler/data/stack_arr_push.txt"
+#define STACK_LST_PUSH "../prj.app/stack_profiler/data/stack_lst_push.txt"
 
 
 void CreateN(int N) {

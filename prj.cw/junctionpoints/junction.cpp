@@ -126,20 +126,18 @@ JunctionMat::JunctionMat(const std::string& filename, int radius_border,
   FindBorderPoints();
 }
 
-void JunctionMat::DrawDividers(
-    std::vector<cv::Point> result,
-    std::vector<std::vector<cv::Point>> intersections) {
+void JunctionMat::DrawDividers(std::vector<cv::Point> result,
+                               std::vector<cv::Point> intersections) {
   while (!result.empty()) {
-    cv::Point best_1;
-    cv::Point best_intersection_1(0, 0);
+    cv::Point best_1 = result[0];
+    cv::Point best_intersection_1 = intersections[0];
     int i_1 = 0;
     for (int i = 0; i < result.size(); ++i) {
-      for (int j = 0; j < intersections[i].size(); ++j) {
-        if (intersections[i][j].y > best_intersection_1.y) {
-          best_intersection_1 = intersections[i][j];
-          best_1 = result[i];
-          i_1 = i;
-        }
+      if (cv::norm(best_1 - best_intersection_1) >
+          cv::norm(result[i] - intersections[i])) {
+        i_1 = i;
+        best_1 = result[i];
+        best_intersection_1 = intersections[i];
       }
     }
 
@@ -148,16 +146,15 @@ void JunctionMat::DrawDividers(
 
     if (result.empty()) break;
 
-    cv::Point best_2;
-    cv::Point best_intersection_2(0, 100000);
+    cv::Point best_2 = result[0];
+    cv::Point best_intersection_2 = intersections[0];
     int i_2 = 0;
     for (int i = 0; i < result.size(); ++i) {
-      for (int j = 0; j < intersections[i].size(); ++j) {
-        if (intersections[i][j].y < best_intersection_2.y) {
-          best_intersection_2 = intersections[i][j];
-          best_2 = result[i];
-          i_2 = i;
-        }
+      if (cv::norm(best_2 - best_intersection_2) >
+          cv::norm(result[i] - intersections[i])) {
+        i_2 = i;
+        best_2 = result[i];
+        best_intersection_2 = intersections[i];
       }
     }
 
@@ -171,47 +168,68 @@ void JunctionMat::DrawDividers(
 std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
   std::vector<cv::Point> result;
   std::vector<size_t> indices;
-  std::vector<std::vector<cv::Point>> intersections;
+  std::vector<cv::Point> intersections;
 
+  int max_radius = 10;
   for (size_t i = 0; i < borderPoints_.size(); ++i) {
-    cv::Point p1 =
-        borderPoints_[i - radius_border_ >= 0
-                          ? i - radius_border_
-                          : borderPoints_.size() + i - radius_border_];
+    //    cv::Point p1 =
+    //        borderPoints_[i - radius_border_ >= 0
+    //                          ? i - radius_border_
+    //                          : borderPoints_.size() + i - radius_border_];
+    //    cv::Point p2 = borderPoints_[i];
+    //    cv::Point p3 =
+    //        borderPoints_[i + radius_border_ < borderPoints_.size()
+    //                          ? i + radius_border_
+    //                          : i + radius_border_ - borderPoints_.size()];
     cv::Point p2 = borderPoints_[i];
-    cv::Point p3 =
-        borderPoints_[i + radius_border_ < borderPoints_.size()
-                          ? i + radius_border_
-                          : i + radius_border_ - borderPoints_.size()];
+
+    cv::Point p1 = borderPoints_[i];
+    for (int j = 0; j < radius_border_; ++j) {
+      p1 = borderPoints_[i - j >= 0 ? i - j : borderPoints_.size() + i - j];
+
+      if (cv::norm(p1 - p2) > max_radius) break;
+    }
+
+    cv::Point p3 = p2;
+    for (int j = 0; j < radius_border_; ++j) {
+      p3 = borderPoints_[i + j < borderPoints_.size()
+                             ? i + j
+                             : i + j - borderPoints_.size()];
+      if (cv::norm(p3 - p2) > max_radius) break;
+    }
+
+    if (cv::norm(p2 - p1) > 100 || cv::norm(p2 - p3) > 100) continue;
 
     cv::Point norm = GetNormVector(p2, p1 - p2, p3 - p2);
 
     double angle = std::acos((p1 - p2).dot(p3 - p2) /
                              (cv::norm(p2 - p1) * cv::norm(p3 - p2))) *
                    180 / M_PI;
-    //    if (i % 25 == 0) {
-    //      cv::arrowedLine(*this, p2, p1, cv::Scalar(0, 255, 0), 1);
-    //      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
-    //    }
+//    if (i % 25 == 0) {
+//      cv::arrowedLine(*this, p2, p1, cv::Scalar(0, 255, 0), 1);
+//      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
+//    }
 
     if (IsJunction(angle, result, p2) &&
         SameHalfPlane(norm, p1 - p2, p3 - p2)) {
       result.push_back(p2);
       indices.push_back(i);
-//      drawInfiniteLine(*this, p1, p3);
+      //      drawInfiniteLine(*this, p1, p3);
       auto cur_inter = findIntersectionsWithPolygon(borderPoints_, p1, p3);
-      intersections.push_back(cur_inter);
-//      for (const auto& inter : cur_inter) {
-//        cv::circle(*this, inter, 5, cv::Scalar(0, 0, 255), 2);
-//      }
-      //      cv::arrowedLine(*
-      //      this, p2, p1, cv::Scalar(0, 255, 0), 1);
-      //      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
-      //      cv::arrowedLine(*this, p2, p2 + norm, cv::Scalar(0, 0, 255), 1);
+      cv::Point best_intersection = cur_inter[0];
+      for (const auto& inter : cur_inter) {
+        if (best_intersection.y < inter.y) best_intersection = inter;
+      }
+      intersections.push_back(best_intersection);
+      //      for (const auto& inter : cur_inter) {
+      //        cv::circle(*this, inter, 5, cv::Scalar(0, 0, 255), 2);
+      //      }
+      cv::arrowedLine(*this, p2, p1, cv::Scalar(0, 255, 0), 1);
+      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
+      cv::arrowedLine(*this, p2, p2 + norm, cv::Scalar(0, 0, 255), 1);
     }
-    //    cv::arrowedLine(*this, borderPoints_[i],
-    //                    borderPoints_[i > 0 ? i - 1 : borderPoints_.size() -
-    //                    1], cv::Scalar(0, 0, 255), 2);
+//        cv::arrowedLine(*this, borderPoints_[i],
+//                    borderPoints_[i > 0 ? i - 1 : borderPoints_.size() - 1], cv::Scalar(0, 0, 255), 2);
   }
 
   DrawDividers(result, intersections);
@@ -254,8 +272,10 @@ void JunctionMat::Save(const std::string& filename) {
 
 bool JunctionMat::IsJunction(double angle, const std::vector<cv::Point>& result,
                              cv::Point p) {
-  return angle > 0 && angle < angle_border_ &&
-         (result.size() <= 1 || cv::norm(result[result.size() - 1] - p) > 25);
+  for (int i = 0; i < result.size(); ++i) {
+    if (cv::norm(result[i] - p) < 20) return false;
+  }
+  return angle > 0 && angle < angle_border_;
   //  return angle > 0 && angle < angle_border_ &&
   //         (result.size() == 0 || result.back() < p - 300);
 }

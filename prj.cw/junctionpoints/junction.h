@@ -32,6 +32,6 @@ class JunctionMat : public cv::Mat {
                   cv::Point p);
 
   void DrawDividers(std::vector<cv::Point> result,
-                    std::vector<std::vector<cv::Point>> intersections);
+                    std::vector<cv::Point> intersections);
 };
 #endif  // MIPT2024S_3_JUNCTION_H

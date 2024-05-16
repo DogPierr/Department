@@ -1,7 +1,4 @@
-CHECK: 20240516-135509
-ERROR: path prj.app/stack_profiler does not exist
-ERROR: path prj.app/stack_profiler/stack_profiler.cpp does not exist
-ERROR: path prj.app/stack_profiler/readme.md does not exist
+CHECK: 20240516-163536
 STATUS: lab stackarr - test-failed
 ERROR: lab stackarrt - test build failed
 ERROR: lab stacklst - test build failed

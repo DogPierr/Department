@@ -126,15 +126,15 @@ class AvlTree {
     }
   }
 
-  void search(const Object& object, const char* stringName) {
+  Object* search(const Object& object, const char* stringName) {
     //    TimerProfiler t(fileLog, stringName, size_);
-    tree_.find(object);
+    return tree_.find(object);
   }
 
   void searchSameAVL() {
     TimerProfiler t(fileLog, __FUNCTION__, size_);
     for (size_t i = 0; i < size_; ++i) {
-      search(*data_[i], __FUNCTION__);
+      if (search(*data_[i], __FUNCTION__) != data_[i]) std::cout << "err\n";
     }
   }
 
@@ -235,11 +235,11 @@ void Test() {
       sortedArray.searchSameSort();
       sortedArray.searchRandomSort(dataRandom, 2 * N);
     }
-//    {
-//      SortedArray* sortedArray = new SortedArray(data, N);
-//      TimerProfiler t(fileLog, "SortedArrayClear", N);
-//      sortedArray->~SortedArray();
-//    }
+    //    {
+    //      SortedArray* sortedArray = new SortedArray(data, N);
+    //      TimerProfiler t(fileLog, "SortedArrayClear", N);
+    //      sortedArray->~SortedArray();
+    //    }
 
     {
       AvlTree avlTree(data, N);
@@ -247,11 +247,11 @@ void Test() {
       avlTree.searchRandomAVL(dataRandom, 2 * N);
       avlTree.removeSameAVL();
     }
-//    {
-//      AvlTree* avlTree = new AvlTree(data, N);
-//      TimerProfiler t(fileLog, "AvlTreeClear", N);
-//      avlTree->~AvlTree();
-//    }
+    //    {
+    //      AvlTree* avlTree = new AvlTree(data, N);
+    //      TimerProfiler t(fileLog, "AvlTreeClear", N);
+    //      avlTree->~AvlTree();
+    //    }
 
     {
       HashMap hashMap(data, N);
@@ -259,11 +259,11 @@ void Test() {
       hashMap.searchRandomHash(dataRandom, 2 * N);
       hashMap.removeSameHash();
     }
-//    {
-//      HashMap* hashMap = new HashMap(data, N);
-//      TimerProfiler t(fileLog, "HashMapClear", N);
-//      hashMap->~HashMap();
-//    }
+    //    {
+    //      HashMap* hashMap = new HashMap(data, N);
+    //      TimerProfiler t(fileLog, "HashMapClear", N);
+    //      hashMap->~HashMap();
+    //    }
   }
 }
 

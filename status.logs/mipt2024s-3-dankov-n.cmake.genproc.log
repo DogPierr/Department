@@ -23,6 +23,6 @@
 -- Found Threads: TRUE  
 -- Found TIFF: optimized;D:/programs/vcpkg/installed/x64-windows/lib/tiff.lib;debug;D:/programs/vcpkg/installed/x64-windows/debug/lib/tiffd.lib (found version "4.6.0")  
 -- Found OpenCV: D:/programs/vcpkg/installed/x64-windows (found version "4.8.0") 
--- Configuring done (3.8s)
--- Generating done (0.2s)
+-- Configuring done (4.9s)
+-- Generating done (0.4s)
 -- Build files have been written to: D:/projects/mipt2024s-3-check/mipt2024s-3-dankov-n/build.check

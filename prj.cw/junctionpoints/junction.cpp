@@ -161,7 +161,7 @@ void JunctionMat::DrawDividers(std::vector<cv::Point> result,
     result.erase(result.begin() + i_2);
     intersections.erase(intersections.begin() + i_2);
 
-    cv::line(*this, best_1, best_2, cv::Scalar(255, 0, 255), 1);
+    AsParallel(best_2, best_1);
   }
 }
 
@@ -169,8 +169,13 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
   std::vector<cv::Point> result;
   std::vector<size_t> indices;
   std::vector<cv::Point> intersections;
-
-  int max_radius = 10;
+  auto good_border = FincGoodBorder();
+  for (size_t i = 0; i < good_border.size() - 1; ++i) {
+    auto p1 = good_border[i];
+    auto p2 = good_border[i < good_border.size() - 1 ? i + 1 : 0];
+    cv::arrowedLine(*this, p1, p2, cv::Scalar(0, 0, 255), 2);
+  }
+  int max_radius = 12;
   for (size_t i = 0; i < borderPoints_.size(); ++i) {
     //    cv::Point p1 =
     //        borderPoints_[i - radius_border_ >= 0
@@ -205,10 +210,10 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
     double angle = std::acos((p1 - p2).dot(p3 - p2) /
                              (cv::norm(p2 - p1) * cv::norm(p3 - p2))) *
                    180 / M_PI;
-//    if (i % 25 == 0) {
-//      cv::arrowedLine(*this, p2, p1, cv::Scalar(0, 255, 0), 1);
-//      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
-//    }
+    //    if (i % 25 == 0) {
+    //      cv::arrowedLine(*this, p2, p1, cv::Scalar(0, 255, 0), 1);
+    //      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
+    //    }
 
     if (IsJunction(angle, result, p2) &&
         SameHalfPlane(norm, p1 - p2, p3 - p2)) {
@@ -216,20 +221,26 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
       indices.push_back(i);
       //      drawInfiniteLine(*this, p1, p3);
       auto cur_inter = findIntersectionsWithPolygon(borderPoints_, p1, p3);
-      cv::Point best_intersection = cur_inter[0];
-      for (const auto& inter : cur_inter) {
-        if (best_intersection.y < inter.y) best_intersection = inter;
+      if (!cur_inter.empty()) {
+        cv::Point best_intersection = cur_inter[0];
+        for (const auto& inter : cur_inter) {
+          if (best_intersection.y < inter.y) best_intersection = inter;
+        }
+        intersections.push_back(best_intersection);
+      } else {
+        result.pop_back();
+        indices.pop_back();
       }
-      intersections.push_back(best_intersection);
-      //      for (const auto& inter : cur_inter) {
-      //        cv::circle(*this, inter, 5, cv::Scalar(0, 0, 255), 2);
-      //      }
-      cv::arrowedLine(*this, p2, p1, cv::Scalar(0, 255, 0), 1);
-      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);
+      for (const auto& inter : cur_inter) {
+        cv::circle(*this, inter, 5, cv::Scalar(0, 255, 0 ), 2);
+      }
+      cv::arrowedLine(*this, p2, p1 + (p1 - p2)*10, cv::Scalar(0, 255, 0), 1);
+      cv::arrowedLine(*this, p2, p3 + (p3 - p2)*10, cv::Scalar(0, 255, 255), 1);
       cv::arrowedLine(*this, p2, p2 + norm, cv::Scalar(0, 0, 255), 1);
     }
-//        cv::arrowedLine(*this, borderPoints_[i],
-//                    borderPoints_[i > 0 ? i - 1 : borderPoints_.size() - 1], cv::Scalar(0, 0, 255), 2);
+    //        cv::arrowedLine(*this, borderPoints_[i],
+    //                    borderPoints_[i > 0 ? i - 1 : borderPoints_.size() -
+    //                    1], cv::Scalar(0, 0, 255), 2);
   }
 
   DrawDividers(result, intersections);
@@ -290,7 +301,7 @@ bool JunctionMat::SameHalfPlane(const cv::Point& norm, const cv::Point& v1,
 
 cv::Point JunctionMat::GetNormVector(const cv::Point& p, const cv::Point& p1,
                                      const cv::Point& p2) {
-  cv::Point norm(p2 + p1);
+  cv::Point norm((p2 + p1) / 2);
   //  norm /= cv::norm(norm);
   //  norm *= 10;
   //  std::vector<int> xAdd = {0, 1, 2, 3, 4};
@@ -320,6 +331,92 @@ cv::Point JunctionMat::GetNormVector(const cv::Point& p, const cv::Point& p1,
   return norm;
 }
 
+std::vector<cv::Point> JunctionMat::FincGoodBorder() {
+  std::vector<std::vector<cv::Point>> semi_result;
+  std::vector<double> len;
+  int j = 0;
+  bool is_adding = false;
+  for (size_t i = 0; i < borderPoints_.size(); ++i) {
+    auto p1 = borderPoints_[i];
+    auto p2 = borderPoints_[i < borderPoints_.size() - 1 ? i + 1 : 0];
+    if ((p2 - p1).x >= 0) {
+      is_adding = true;
+      if (j >= semi_result.size()) {
+        semi_result.push_back(std::vector<cv::Point>());
+        len.push_back(0);
+      }
+      semi_result[j].push_back(p1);
+      len[j] += cv::norm(p2 - p1);
+    } else if (is_adding) {
+      j++;
+      is_adding = false;
+    }
+  }
+
+  double best_len = 0;
+  int best_i = 0;
+  for (int i = 0; i < semi_result.size(); ++i) {
+    if (len[i] > best_len) {
+      best_len = len[i];
+      best_i = i;
+    }
+  }
+  goodBorderPoints_ = semi_result[best_i];
+  return semi_result[best_i];
+
+  //  std::vector<cv::Point> best_result;
+  //  double best_len = 0;
+  //  std::vector<cv::Point> result;
+  //  double res_len = 0;
+  //  int i = 0;
+  //  while (i < semi_result.size()) {
+  //    auto p1 = semi_result[i];
+  //    auto p2 = semi_result[i < semi_result.size() - 1 ? i + 1 : 0];
+  //    if (cv::norm(p2 - p1) < 1000) {
+  //      result.push_back(p1);
+  //      res_len += cv::norm(p2 - p1);
+  //    } else {
+  //      if (res_len > best_len) {
+  //        best_result = result;
+  //        best_len = res_len;
+  //      }
+  //      result.clear();
+  //      res_len = 0;
+  //    }
+  //    i++;
+  //  }
+}
+void JunctionMat::AsParallel(cv::Point p1, cv::Point p2) {
+  std::vector<cv::Point> some = goodBorderPoints_;// {cv::Point (0, 0), cv::Point(100, 100)};
+  int n = some.size();
+  cv::Mat I = cv::Mat::eye(2*n, 2*n, CV_64F);
+
+  cv::Mat A(2, 2*n, CV_64F);
+  for (int i = 0; i < 2*n; ++i) {
+    A.at<double>(i % 2, i) = 1;
+    A.at<double>((i + 1) % 2, i) = 0;
+  }
+
+  cv::Mat P(n*2, 1, CV_64F);
+  for (int i = 0; i < n; ++i) {
+    P.at<double>(i*2, 0) = -some[i].x;
+    P.at<double>(i*2 + 1, 0) = -some[i].y;
+  }
+  cv::Mat M(2, 1, CV_64F);
+  M.at<double>(0, 0) = p2.x - p1.x;
+  M.at<double>(1, 0) = p2.y - p1.y;
+  cv::Mat AT = A.t();
+
+  cv::Mat X = (-I + AT * A / n) * P + AT * M / n;
+  std::vector<cv::Point> result;
+  for (int i = 0; i < n; ++i) {
+    result.emplace_back(X.at<double>(i*2, 0), X.at<double>(i*2 + 1, 0));
+  }
+  for (int i = 0; i < result.size() - 1; ++i) {
+    cv::line(*this, result[i], result[i + 1], cv::Scalar(255, 0, 255), 2);
+  }
+}
+
 void processImagesInFolder(const std::string& folderPath,
                            const std::string& outputFolderPath,
                            const std::string& combinedImagePath) {
@@ -327,7 +424,7 @@ void processImagesInFolder(const std::string& folderPath,
   for (const auto& entry : std::filesystem::directory_iterator(folderPath)) {
     if (entry.is_regular_file() && (entry.path().extension() == ".jpg" ||
                                     entry.path().extension() == ".png")) {
-      JunctionMat junctionMat(entry.path().string(), 5, 140);
+      JunctionMat junctionMat(entry.path().string(), 10, 120);
 
       if (junctionMat.empty()) {
         std::cerr << "Error loading image: " << entry.path().string()

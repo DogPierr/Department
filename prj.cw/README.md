@@ -71,7 +71,23 @@ $W(i, j) = \frac{min(m_i l_i, m_j l_j)}{max(m_i l_i, m_j l_j)}$.
 неточности поиска точек перегиба, но тем не менее уже имеется какой-то результат.
 
 <p align="center">
-  <img src="images/resultcombo/combined_result.png" width="250" />
+  <img src="images/resultcombo/combined_result_2.png" width="750" />
+</p>
+
+
+### Почти параллельная линия разреза
+Для построение почти параллельной линии будем поступать следующим образом:
+1. Ищем нижнюю границу объекта. Для этого пройдемся по границе и будем выбирать те вектора, которые имеют 
+неотрицательную координату по x.
+2. Далее воспользуемся алгоритмом из статьи для построения линии разреза.
+<p align="center">
+  <img src="images/other/lines.png" width="750" />
+</p>
+<p align="center">
+  <img src="images/other/line_formula.png" width="750" />
+</p>
+<p align="center">
+  <img src="images/other/formula.png" width="750" />
 </p>
 
 ---

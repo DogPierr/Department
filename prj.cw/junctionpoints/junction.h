@@ -21,6 +21,7 @@ class JunctionMat : public cv::Mat {
   int radius_border_;
   int angle_border_;
   std::vector<cv::Point> borderPoints_;
+  std::vector<cv::Point> goodBorderPoints_;
 
   cv::Point GetNormVector(const cv::Point& p, const cv::Point& p1,
                           const cv::Point& p2);
@@ -33,5 +34,8 @@ class JunctionMat : public cv::Mat {
 
   void DrawDividers(std::vector<cv::Point> result,
                     std::vector<cv::Point> intersections);
+
+  std::vector<cv::Point> FincGoodBorder();
+  void AsParallel(cv::Point p1, cv::Point p2);
 };
 #endif  // MIPT2024S_3_JUNCTION_H

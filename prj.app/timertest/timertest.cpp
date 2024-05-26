@@ -37,15 +37,15 @@ int main() {
   printf("Without profiler!\n");
 #endif
 
-  auto start = std::chrono::high_resolution_clock::now();
+  auto start = std::chrono::steady_clock::now();
   for (int i = 0; i < 100000; ++i) push();
-  auto stop = std::chrono::high_resolution_clock::now();
+  auto stop = std::chrono::steady_clock::now();
   auto duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();
   if (!flag) printf("push,%li,100000\n", duration);
 
-  start = std::chrono::high_resolution_clock::now();
+  start = std::chrono::steady_clock::now();
   for (int i = 0; i < 100000; ++i) pop();
-  stop = std::chrono::high_resolution_clock::now();
+  stop = std::chrono::steady_clock::now();
   duration = std::chrono::duration_cast<std::chrono::nanoseconds>(stop - start).count();
   if (!flag) printf("pop,%li,100000\n", duration);
 

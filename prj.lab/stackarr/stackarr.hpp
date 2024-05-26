@@ -68,7 +68,8 @@ void StackArray<T>::Push(const T& value) {
     if (size_ == capacity_) {
         Resize(capacity_ != 0 ? capacity_ * 2 : 1);
     }
-    data_[size_++] = value;
+    data_[size_] = value;
+    ++size_;
 }
 
 template<typename T>

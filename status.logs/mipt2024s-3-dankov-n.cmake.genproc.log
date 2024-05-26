@@ -12,4 +12,7 @@
 -- Check for working CXX compiler: C:/Programs/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.39.33519/bin/Hostx64/x64/cl.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Configuring incomplete, errors occurred!
+-- Found nlohmann_json: D:/programs/vcpkg/installed/x64-windows/share/nlohmann_json/nlohmann_jsonConfig.cmake (found suitable version "3.11.3", minimum required is "3.7.0") 
+-- Configuring done (3.3s)
+-- Generating done (0.1s)
+-- Build files have been written to: D:/projects/mipt2024s-3-check/mipt2024s-3-dankov-n/build.check

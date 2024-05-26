@@ -159,5 +159,5 @@ Stack<T>::~Stack() {
   }
 }
 
-using StackList = Stack<float>;
+using StackLst = Stack<float>;
 #endif

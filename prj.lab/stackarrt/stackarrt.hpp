@@ -1,5 +1,5 @@
-#ifndef MIPT2024S_3_STACKARRT_H
-#define MIPT2024S_3_STACKARRT_H
+#ifndef MIPT2024S_3_STACKARRT_HPP
+#define MIPT2024S_3_STACKARRT_HPP
 
 #include <algorithm>
 #include "../stackarr/stackarr.hpp"
@@ -7,4 +7,4 @@
 template <typename T>
 using StackArrT = StackArray<T>;
 
-#endif  // MIPT2024S_3_STACKARRT_H
+#endif  // MIPT2024S_3_STACKARRT_HPP

@@ -4,9 +4,8 @@
 #include <cmath>
 #include <iostream>
 #include <vector>
-
-#include "algorithm"
-#include "chrono"
+#include <algorithm>
+#include <chrono>
 
 template <bool IsTest>
 class MoveTester {

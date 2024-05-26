@@ -209,7 +209,7 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
 
     double angle = std::acos((p1 - p2).dot(p3 - p2) /
                              (cv::norm(p2 - p1) * cv::norm(p3 - p2))) *
-                   180 / M_PI;
+                   180 / 3.1415;
     //    if (i % 25 == 0) {
     //      cv::arrowedLine(*this, p2, p1, cv::Scalar(0, 255, 0), 1);
     //      cv::arrowedLine(*this, p2, p3, cv::Scalar(0, 255, 255), 1);

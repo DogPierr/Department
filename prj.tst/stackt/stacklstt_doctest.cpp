@@ -15,7 +15,7 @@ TEST_CASE_TEMPLATE("[stacklstt] -- copy constructors",
   StackLstT<T> st;
   int n = 100;
   for (int i = 0; i < n; ++i) st.Push(T());
-  Stack copy(st);
+  StackLstT<T> copy(st);
   st = copy;
   for (int i = 0; i < n; ++i) {
     st.Pop();

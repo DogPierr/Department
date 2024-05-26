@@ -37,5 +37,6 @@ class JunctionMat : public cv::Mat {
 
   std::vector<cv::Point> FincGoodBorder();
   void AsParallel(cv::Point p1, cv::Point p2);
+  
 };
 #endif  // MIPT2024S_3_JUNCTION_H

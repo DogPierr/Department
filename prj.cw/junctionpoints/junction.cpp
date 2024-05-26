@@ -221,6 +221,9 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
       indices.push_back(i);
       //      drawInfiniteLine(*this, p1, p3);
       auto cur_inter = findIntersectionsWithPolygon(borderPoints_, p1, p3);
+//      auto cur_inter = findIntersectionsWithPolygon(
+//          borderPoints_, p2 + (p1 - p2) / cv::norm(p1 - p2),
+//          p3 + (p3 - p2) / cv::norm(p3 - p2));
       if (!cur_inter.empty()) {
         cv::Point best_intersection = cur_inter[0];
         for (const auto& inter : cur_inter) {
@@ -393,8 +396,8 @@ void JunctionMat::AsParallel(cv::Point p1, cv::Point p2) {
 
   cv::Mat A(2, 2*n, CV_64F);
   for (int i = 0; i < 2*n; ++i) {
-    A.at<double>(i % 2, i) = 1;
-    A.at<double>((i + 1) % 2, i) = 0;
+    A.at<double>((i + 1) % 2, i) = 1;
+    A.at<double>(i % 2, i) = 0;
   }
 
   cv::Mat P(n*2, 1, CV_64F);
@@ -411,10 +414,16 @@ void JunctionMat::AsParallel(cv::Point p1, cv::Point p2) {
   std::vector<cv::Point> result;
   for (int i = 0; i < n; ++i) {
     result.emplace_back(X.at<double>(i*2, 0), X.at<double>(i*2 + 1, 0));
+//    std::cout << result.back() << std::endl;
   }
+  auto diff = p1 - result[0];
   for (int i = 0; i < result.size() - 1; ++i) {
-    cv::line(*this, result[i], result[i + 1], cv::Scalar(255, 0, 255), 2);
+    result[i] += diff;
   }
+//  for (int i = 0; i < result.size() - 1; ++i) {
+//    cv::line(*this, result[i], result[i + 1], cv::Scalar(255, 0, 255), 2);
+//  }
+  cv::line(*this, p1, p2, cv::Scalar(255, 0, 255), 2);
 }
 
 void processImagesInFolder(const std::string& folderPath,

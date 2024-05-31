@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/stack_profiler.dir/stack_profiler.cpp.o -o ../../../bin.dbg/stack_profiler  ../../prj.lab/stackarr/libstackarr.a ../../prj.lab/stacklst/libstacklst.a 

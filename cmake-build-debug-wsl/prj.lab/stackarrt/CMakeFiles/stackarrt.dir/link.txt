@@ -1,0 +1,2 @@
+/usr/bin/ar qc libstackarrt.a CMakeFiles/stackarrt.dir/stackarrt.cpp.o
+/usr/bin/ranlib libstackarrt.a

@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="mipt2024s-3"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\prj.app\;CMake Files\prj.app\stack_profiler\;CMake Files\prj.app\jsonreader\;CMake Files\prj.app\stringtester\;CMake Files\prj.app\timertest\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\usr\lib\;CMake Files\..\..\..\..\..\..\usr\lib\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\cmake\nlohmann_json\;CMake Files\..\..\..\..\..\..\usr\lib\cmake\doctest\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\;CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\;CMake Files\prj.lab\;CMake Files\prj.lab\stackarr\;CMake Files\prj.lab\stackarrt\;CMake Files\prj.lab\stacklst\;CMake Files\prj.lab\stacklstt\;CMake Files\prj.lab\movetest\;CMake Files\prj.lab\timer\;CMake Files\prj.tst\;CMake Files\prj.tst\movetester\;CMake Files\prj.tst\stack\;CMake Files\prj.tst\stackt\;CMake Files\prj.cw\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stack_profiler">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stack_profiler" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/.."/>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stack_profiler/Makefile&quot;  VERBOSE=1 stack_profiler"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stack_profiler/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stack_profiler/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stack_profiler/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stack_profiler/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stack_profiler" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/.."/>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stack_profiler/Makefile&quot;  VERBOSE=1 stack_profiler/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stack_profiler/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stack_profiler/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stack_profiler/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="data">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/data" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DJSON_USE_IMPLICIT_CONVERSIONS=1"/>
+					<Add option="-DJSON_DIAGNOSTICS=0"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/jsonreader/Makefile&quot;  VERBOSE=1 data"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/jsonreader/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/jsonreader/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/jsonreader/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="data/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/data" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DJSON_USE_IMPLICIT_CONVERSIONS=1"/>
+					<Add option="-DJSON_DIAGNOSTICS=0"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/jsonreader/Makefile&quot;  VERBOSE=1 data/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/jsonreader/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/jsonreader/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/jsonreader/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stringtester">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stringtester" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stringtester/Makefile&quot;  VERBOSE=1 stringtester"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stringtester/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stringtester/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stringtester/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stringtester/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stringtester" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stringtester/Makefile&quot;  VERBOSE=1 stringtester/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stringtester/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stringtester/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/stringtester/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timertest">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/timertest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/timer/.."/>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/timertest/Makefile&quot;  VERBOSE=1 timertest"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/timertest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/timertest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/timertest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timertest/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/timertest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/timer/.."/>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/timertest/Makefile&quot;  VERBOSE=1 timertest/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/timertest/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/timertest/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.app/timertest/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stackarr">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/libstackarr.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/Makefile&quot;  VERBOSE=1 stackarr"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stackarr/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/libstackarr.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/Makefile&quot;  VERBOSE=1 stackarr/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarr/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stackarrt">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/libstackarrt.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarrt/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/Makefile&quot;  VERBOSE=1 stackarrt"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stackarrt/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/libstackarrt.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarrt/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/Makefile&quot;  VERBOSE=1 stackarrt/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stackarrt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stacklst">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/libstacklst.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/Makefile&quot;  VERBOSE=1 stacklst"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stacklst/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/libstacklst.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/Makefile&quot;  VERBOSE=1 stacklst/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklst/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stacklstt">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/libstacklstt.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklstt/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/Makefile&quot;  VERBOSE=1 stacklstt"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stacklstt/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/libstacklstt.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklstt/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/Makefile&quot;  VERBOSE=1 stacklstt/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/stacklstt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timer">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/libtimer.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/timer/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/Makefile&quot;  VERBOSE=1 timer"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="timer/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/libtimer.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/timer/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/Makefile&quot;  VERBOSE=1 timer/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.lab/timer/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="movetest_doctest">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/movetest_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/movetester/Makefile&quot;  VERBOSE=1 movetest_doctest"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/movetester/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/movetester/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/movetester/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="movetest_doctest/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/movetest_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/movetester/Makefile&quot;  VERBOSE=1 movetest_doctest/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/movetester/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/movetester/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/movetester/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stackarr_doctest">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stackarr_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 stackarr_doctest"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stackarr_doctest/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stackarr_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 stackarr_doctest/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stacklst_doctest">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stacklst_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 stacklst_doctest"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stacklst_doctest/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stacklst_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 stacklst_doctest/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stack/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stackarrt_doctest">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stackarrt_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarrt/.."/>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 stackarrt_doctest"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stackarrt_doctest/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stackarrt_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarrt/.."/>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 stackarrt_doctest/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stacklstt_doctest">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stacklstt_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklstt/.."/>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 stacklstt_doctest"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stacklstt_doctest/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/stacklstt_doctest" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklstt/.."/>
+					<Add directory="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/.."/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 stacklstt_doctest/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.tst/stackt/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="junction">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/junction" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.cw/Makefile&quot;  VERBOSE=1 junction"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.cw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.cw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.cw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="junction/fast">
+				<Option output="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin.dbg/junction" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/bin"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/include/opencv4"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.cw/Makefile&quot;  VERBOSE=1 junction/fast"/>
+					<CompileFile command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.cw/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.cw/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j16 -f &quot;/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl/prj.cw/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/jsonreader/jsonreader.cpp">
+			<Option target="data"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/stack_profiler/stack_profiler.cpp">
+			<Option target="stack_profiler"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/stringtester/stringtester.cpp">
+			<Option target="stringtester"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/timertest/timertest.cpp">
+			<Option target="timertest"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.cw/junctionpoints/junction.cpp">
+			<Option target="junction"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.cw/junctionpoints/junction.h">
+			<Option target="junction"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/stackarr.cpp">
+			<Option target="stackarr"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/stackarr.hpp">
+			<Option target="stackarr"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarrt/stackarrt.cpp">
+			<Option target="stackarrt"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarrt/stackarrt.hpp">
+			<Option target="stackarrt"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/stacklst.cpp">
+			<Option target="stacklst"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/stacklst.hpp">
+			<Option target="stacklst"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklstt/stacklstt.cpp">
+			<Option target="stacklstt"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklstt/stacklstt.hpp">
+			<Option target="stacklstt"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/timer/timer.cpp">
+			<Option target="timer"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/timer/timer.h">
+			<Option target="timer"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/movetester/movetest_doctest.cpp">
+			<Option target="movetest_doctest"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/stack/stackarr_doctest.cpp">
+			<Option target="stackarr_doctest"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/stack/stacklst_doctest.cpp">
+			<Option target="stacklst_doctest"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/stackt/stackarrt_doctest.cpp">
+			<Option target="stackarrt_doctest"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/stackt/stacklstt_doctest.cpp">
+			<Option target="stacklstt_doctest"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.app\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/stack_profiler/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.app\stack_profiler\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/jsonreader/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.app\jsonreader\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/stringtester/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.app\stringtester\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.app/timertest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.app\timertest\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/cmake/nlohmann_json/nlohmann_jsonConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\cmake\nlohmann_json\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/cmake/nlohmann_json/nlohmann_jsonConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\cmake\nlohmann_json\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/cmake/nlohmann_json/nlohmann_jsonTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\cmake\nlohmann_json\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/cmake/doctest/doctestConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\cmake\doctest\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/cmake/doctest/doctestConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\cmake\doctest\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/cmake/doctest/doctestTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\cmake\doctest\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/../../../../../../usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\usr\lib\x86_64-linux-gnu\cmake\opencv4\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.lab\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarr/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.lab\stackarr\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stackarrt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.lab\stackarrt\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklst/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.lab\stacklst\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/stacklstt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.lab\stacklstt\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/movetest/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.lab\movetest\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.lab/timer/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.lab\timer\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.tst\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/movetester/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.tst\movetester\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/stack/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.tst\stack\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.tst/stackt/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.tst\stackt\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/prj.cw/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\prj.cw\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

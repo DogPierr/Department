@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/stackarr_doctest.dir/stackarr_doctest.cpp.o -o ../../../bin.dbg/stackarr_doctest  ../../prj.lab/stackarr/libstackarr.a 

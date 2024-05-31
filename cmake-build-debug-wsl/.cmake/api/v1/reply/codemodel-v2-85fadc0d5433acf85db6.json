@@ -1,0 +1,467 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						6,
+						13,
+						17
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "prj.app",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-prj.app-Debug-6c7aeb6676c436d330d1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "prj.app"
+				},
+				{
+					"build" : "prj.app/stack_profiler",
+					"jsonFile" : "directory-prj.app.stack_profiler-Debug-2362ab6e9145fd3fd736.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "prj.app/stack_profiler",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "prj.app/jsonreader",
+					"jsonFile" : "directory-prj.app.jsonreader-Debug-87541019f487e83d2359.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "prj.app/jsonreader",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "prj.app/stringtester",
+					"jsonFile" : "directory-prj.app.stringtester-Debug-a3b171643daf137d3299.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "prj.app/stringtester",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "prj.app/timertest",
+					"jsonFile" : "directory-prj.app.timertest-Debug-8b50fdd7b57b05cd78e2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "prj.app/timertest",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "prj.lab",
+					"childIndexes" : 
+					[
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					],
+					"jsonFile" : "directory-prj.lab-Debug-6b850684795bf15e457d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "prj.lab"
+				},
+				{
+					"build" : "prj.lab/stackarr",
+					"jsonFile" : "directory-prj.lab.stackarr-Debug-d5b75f5097e88e7cb834.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "prj.lab/stackarr",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "prj.lab/stackarrt",
+					"jsonFile" : "directory-prj.lab.stackarrt-Debug-c8aab8cfca8ea61cfe4e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "prj.lab/stackarrt",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "prj.lab/stacklst",
+					"jsonFile" : "directory-prj.lab.stacklst-Debug-3bdba58d6d0c0bdbb81e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "prj.lab/stacklst",
+					"targetIndexes" : 
+					[
+						9
+					]
+				},
+				{
+					"build" : "prj.lab/stacklstt",
+					"jsonFile" : "directory-prj.lab.stacklstt-Debug-70dac5ced95b3001fdc9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "prj.lab/stacklstt",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "prj.lab/movetest",
+					"jsonFile" : "directory-prj.lab.movetest-Debug-ca15b209192f48f1dcde.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "prj.lab/movetest",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "prj.lab/timer",
+					"jsonFile" : "directory-prj.lab.timer-Debug-8df4a4c6334022a1db2e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "prj.lab/timer",
+					"targetIndexes" : 
+					[
+						14
+					]
+				},
+				{
+					"build" : "prj.tst",
+					"childIndexes" : 
+					[
+						14,
+						15,
+						16
+					],
+					"jsonFile" : "directory-prj.tst-Debug-b3abb8290656d9511e93.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "prj.tst"
+				},
+				{
+					"build" : "prj.tst/movetester",
+					"jsonFile" : "directory-prj.tst.movetester-Debug-109aa4825d74f58d22d0.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 13,
+					"projectIndex" : 0,
+					"source" : "prj.tst/movetester",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "prj.tst/stack",
+					"jsonFile" : "directory-prj.tst.stack-Debug-17418ffd01a53bdd6a6a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 13,
+					"projectIndex" : 0,
+					"source" : "prj.tst/stack",
+					"targetIndexes" : 
+					[
+						6,
+						10
+					]
+				},
+				{
+					"build" : "prj.tst/stackt",
+					"jsonFile" : "directory-prj.tst.stackt-Debug-dd711b0e986daa8b9b5a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 13,
+					"projectIndex" : 0,
+					"source" : "prj.tst/stackt",
+					"targetIndexes" : 
+					[
+						8,
+						12
+					]
+				},
+				{
+					"build" : "prj.cw",
+					"jsonFile" : "directory-prj.cw-Debug-1f8947d3f99eb1f7c558.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.20"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "prj.cw",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					],
+					"name" : "mipt2024s-3",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "data::@a72a7fdc187f56047e7b",
+					"jsonFile" : "target-data-Debug-5d170daf256cbefc49de.json",
+					"name" : "data",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 17,
+					"id" : "junction::@e5881f8273a942566d4d",
+					"jsonFile" : "target-junction-Debug-520bd3d6e4c7a0787aa2.json",
+					"name" : "junction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 11,
+					"id" : "movetest::@87ae7eeaf854924ff944",
+					"jsonFile" : "target-movetest-Debug-b22f90674f5eae798b08.json",
+					"name" : "movetest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 14,
+					"id" : "movetest_doctest::@552b031bdca577a8e125",
+					"jsonFile" : "target-movetest_doctest-Debug-7caa30306bd1003e4e19.json",
+					"name" : "movetest_doctest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "stack_profiler::@24f18a27d2e06da01e76",
+					"jsonFile" : "target-stack_profiler-Debug-de183c09635708579176.json",
+					"name" : "stack_profiler",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "stackarr::@5cb587019536b540a06d",
+					"jsonFile" : "target-stackarr-Debug-cee867e7d1cce57f40b5.json",
+					"name" : "stackarr",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "stackarr_doctest::@d1b8925ba38e4faf3d78",
+					"jsonFile" : "target-stackarr_doctest-Debug-22fd74584218db7fd984.json",
+					"name" : "stackarr_doctest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "stackarrt::@22b8ac2838b41b53b15a",
+					"jsonFile" : "target-stackarrt-Debug-f143ad920e08ff5ff171.json",
+					"name" : "stackarrt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "stackarrt_doctest::@4376b5980ccf4afef5ff",
+					"jsonFile" : "target-stackarrt_doctest-Debug-86aa9a75cf790b88e1e7.json",
+					"name" : "stackarrt_doctest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "stacklst::@6bb98f6a26e8fa7c255c",
+					"jsonFile" : "target-stacklst-Debug-afe056948334c4049553.json",
+					"name" : "stacklst",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 15,
+					"id" : "stacklst_doctest::@d1b8925ba38e4faf3d78",
+					"jsonFile" : "target-stacklst_doctest-Debug-08e1bedbc1c932994f5e.json",
+					"name" : "stacklst_doctest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "stacklstt::@82750766f4e435130ee6",
+					"jsonFile" : "target-stacklstt-Debug-335c122facc83e0ad2b5.json",
+					"name" : "stacklstt",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 16,
+					"id" : "stacklstt_doctest::@4376b5980ccf4afef5ff",
+					"jsonFile" : "target-stacklstt_doctest-Debug-d02ade5cac7c0ade8c08.json",
+					"name" : "stacklstt_doctest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "stringtester::@3ad4dac352ca247731bf",
+					"jsonFile" : "target-stringtester-Debug-94fc0e4823199ca8a8d4.json",
+					"name" : "stringtester",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 12,
+					"id" : "timer::@befa95f57046994f47ea",
+					"jsonFile" : "target-timer-Debug-f606f3d8a9157b74c4c0.json",
+					"name" : "timer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "timertest::@1da10c7716c6c9fed03b",
+					"jsonFile" : "target-timertest-Debug-29a96294c33fc672bcb0.json",
+					"name" : "timertest",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n/cmake-build-debug-wsl",
+		"source" : "/mnt/c/Users/Asus/CLionProjects/mipt2024s-3-dankov-n"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

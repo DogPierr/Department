@@ -170,11 +170,11 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
   std::vector<size_t> indices;
   std::vector<cv::Point> intersections;
   auto good_border = FincGoodBorder();
-  for (size_t i = 0; i < good_border.size() - 1; ++i) {
-    auto p1 = good_border[i];
-    auto p2 = good_border[i < good_border.size() - 1 ? i + 1 : 0];
-    cv::arrowedLine(*this, p1, p2, cv::Scalar(0, 0, 255), 2);
-  }
+//  for (size_t i = 0; i < good_border.size() - 1; ++i) {
+//    auto p1 = good_border[i];
+//    auto p2 = good_border[i < good_border.size() - 1 ? i + 1 : 0];
+//    cv::arrowedLine(*this, p1, p2, cv::Scalar(0, 0, 255), 2);
+//  }
   int max_radius = 12;
   for (size_t i = 0; i < borderPoints_.size(); ++i) {
     //    cv::Point p1 =
@@ -220,7 +220,7 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
       result.push_back(p2);
       indices.push_back(i);
       //      drawInfiniteLine(*this, p1, p3);
-      auto cur_inter = findIntersectionsWithPolygon(borderPoints_, p1, p3);
+      auto cur_inter = findIntersectionsWithPolygon(borderPoints_, p2 + cv::Point(-norm.y, norm.x), p2);
 //      auto cur_inter = findIntersectionsWithPolygon(
 //          borderPoints_, p2 + (p1 - p2) / cv::norm(p1 - p2),
 //          p3 + (p3 - p2) / cv::norm(p3 - p2));
@@ -234,12 +234,13 @@ std::vector<cv::Point> JunctionMat::FindJunctionPoints() {
         result.pop_back();
         indices.pop_back();
       }
-      for (const auto& inter : cur_inter) {
-        cv::circle(*this, inter, 5, cv::Scalar(0, 255, 0 ), 2);
-      }
-      cv::arrowedLine(*this, p2, p1 + (p1 - p2)*10, cv::Scalar(0, 255, 0), 1);
-      cv::arrowedLine(*this, p2, p3 + (p3 - p2)*10, cv::Scalar(0, 255, 255), 1);
-      cv::arrowedLine(*this, p2, p2 + norm, cv::Scalar(0, 0, 255), 1);
+//      for (const auto& inter : cur_inter) {
+//        cv::circle(*this, inter, 5, cv::Scalar(0, 0, 255), 2);
+//      }
+//      cv::circle(*this, intersections.back(), 5, cv::Scalar(0, 255, 0 ), 2);
+//      cv::arrowedLine(*this, p2, p1 + (p1 - p2)*10, cv::Scalar(0, 255, 0), 1);
+//      cv::arrowedLine(*this, p2, p3 + (p3 - p2)*10, cv::Scalar(0, 255, 255), 1);
+//      cv::arrowedLine(*this, p2, p2 + norm, cv::Scalar(0, 0, 255), 1);
     }
     //        cv::arrowedLine(*this, borderPoints_[i],
     //                    borderPoints_[i > 0 ? i - 1 : borderPoints_.size() -

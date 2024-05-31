@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/stacklstt_doctest.dir/stacklstt_doctest.cpp.o -o ../../../bin.dbg/stacklstt_doctest  ../../prj.lab/stacklstt/libstacklstt.a 

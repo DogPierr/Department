@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/stringtester.dir/stringtester.cpp.o -o ../../../bin.dbg/stringtester 
